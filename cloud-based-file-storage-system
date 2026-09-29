@@ -1,0 +1,82 @@
+print("=" * 45)
+print("       CLOUD-BASED FILE STORAGE SYSTEM")
+print("=" * 45)
+cloud_storage = []
+while True:
+    print("\n1. Upload File")
+    print("2. View Files")
+    print("3. Download File")
+    print("4. Delete File")
+    print("5. Exit")
+    choice = input("\nEnter your choice: ")
+    if choice == "1":
+        filename = input("Enter file name: ")
+        if filename in cloud_storage:
+            print("File already exists!")
+        else:
+            cloud_storage.append(filename)
+            print(f"'{filename}' uploaded successfully.")
+    elif choice == "2":
+        print("\nFiles in Cloud Storage:")
+        if len(cloud_storage) == 0:
+            print("No files available.")
+        else:
+            for i, file in enumerate(cloud_storage, 1):
+                print(f"{i}. {file}")
+    elif choice == "3":
+        filename = input("Enter file name to download: ")
+        if filename in cloud_storage:
+            print(f"'{filename}' downloaded successfully.")
+        else:
+            print("File not found.")
+    elif choice == "4":
+        filename = input("Enter file name to delete: ")
+        if filename in cloud_storage:
+            cloud_storage.remove(filename)
+            print(f"'{filename}' deleted successfully.")
+        else:
+            print("File not found.")
+    elif choice == "5":
+        print("Thank you for using Cloud Storage System!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
+OUTPUT:
+=============================================
+       CLOUD-BASED FILE STORAGE SYSTEM
+=============================================
+
+1. Upload File
+2. View Files
+3. Download File
+4. Delete File
+5. Exit
+Enter your choice: 1
+Enter file name: project.pdf
+'project.pdf' uploaded successfully.
+1. Upload File
+2. View Files
+3. Download File
+4. Delete File
+5. Exit
+Enter your choice: 1
+Enter file name: photo.jpg
+'photo.jpg' uploaded successfully.
+1. Upload File
+2. View Files
+3. Download File
+4. Delete File
+5. Exit
+Enter your choice: 2
+Files in Cloud Storage:
+1. project.pdf
+2. photo.jpg
+Enter your choice: 3
+Enter file name to download: project.pdf
+'project.pdf' downloaded successfully.
+Enter your choice: 4
+Enter file name to delete: photo.jpg
+'photo.jpg' deleted successfully.
+Enter your choice: 5
+Thank you for using Cloud Storage System!
